@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhanced Dashboard Cards Click Handlers - ADD THIS
 const dashboardCards = document.querySelectorAll('.dashboard-card');
 const projectUrls = {
-    'adidas-sales': 'https://github.com/hariprasath/adidas-sales-dashboard',
-    'amazon-analysis': 'https://github.com/hariprasath/amazon-analysis-dashboard',
-    'superstore-analysis': 'https://github.com/hariprasath/superstore-analysis-dashboard'
+    'adidas-sales': 'https://github.com/hariprasathmca/Powerbi-Projects-',
+    'amazon-analysis': 'https://github.com/hariprasathmca/Powerbi-Projects-',
+    'superstore-analysis': 'https://github.com/hariprasathmca/Powerbi-Projects-'
 };
 
 dashboardCards.forEach(card => {
@@ -351,4 +351,5 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s ease';
         animateOnScroll.observe(el);
     });
+
 });
