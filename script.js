@@ -113,7 +113,7 @@ dashboardCards.forEach(card => {
     const projectType = card.getAttribute('data-project');
     
     card.addEventListener('click', function() {
-        const url = projectUrls[projectType] || 'https://github.com/hariprasath/powerbi-dashboards';
+        const url = projectUrls[projectType] || 'https://github.com/hariprasathmca/Powerbi-Projects-';
         window.open(url, '_blank');
     });
     
@@ -353,3 +353,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
