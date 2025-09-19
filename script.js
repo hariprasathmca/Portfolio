@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const projectUrls = [
                 'https://github.com/hariprasath/driver-drowsiness-detection',
                 'https://github.com/hariprasath/customer-segmentation-kmeans',
-                'https://github.com/hariprasath/fake-profile-detection'
+                'https://github.com/hariprasathmca/Twitter-Sentiment'
             ];
             
             if (projectUrls[index]) {
@@ -353,4 +353,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
 
