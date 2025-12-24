@@ -294,7 +294,7 @@ document.querySelectorAll('.project-card-gradient, .dashboard-card').forEach(car
 });
 
 // Contact form handling
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
+{/*document.querySelector('.contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const name = document.getElementById('name').value.trim();
@@ -330,7 +330,57 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+*/}
 
+// ================= CONTACT FORM EMAILJS =================
+
+document.querySelector('.contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !subject || !message) {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email");
+        return;
+    }
+
+    const submitBtn = this.querySelector("button");
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    emailjs.send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        }
+    ).then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+        submitBtn.innerText = "Send Message";
+        submitBtn.disabled = false;
+    }).catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Message failed. Please try again.");
+        submitBtn.innerText = "Send Message";
+        submitBtn.disabled = false;
+    });
+});
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 // Add scroll animations
 const animateOnScroll = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -353,5 +403,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
 
 
