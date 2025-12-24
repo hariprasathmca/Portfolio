@@ -357,8 +357,8 @@ document.querySelector('.contact-form').addEventListener('submit', function (e) 
     submitBtn.disabled = true;
 
     emailjs.send(
-        "service_9dc5gta"
-        //"YOUR_TEMPLATE_ID",
+        "ziH5nOwv9qCQIqZW8",
+        "template_clgmyzr",
         {
             from_name: name,
             from_email: email,
@@ -403,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
 
 
 
